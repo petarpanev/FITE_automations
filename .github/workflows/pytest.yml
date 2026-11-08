@@ -67,7 +67,7 @@ jobs:
     - name: Restore Auth Cookies File
       run: |
         mkdir -p .auth
-        echo "${{ secrets.AUTH_COOKIES_BASE64 }}" | base64 --decode > .auth/cookies.json
+        echo "${{ secrets.AUTH_COOKIES_BASE64 }}" | base64 -d --ignore-garbage > .auth/cookies.json
       
     - name: Run Pytest
       run: pytest -o pythonpath=src tests/web/

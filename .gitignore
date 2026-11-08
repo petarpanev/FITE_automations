@@ -1,9 +1,9 @@
 .env
+.auth/
 .venv/
 __pycache__/
 .pytest_cache/
 .venv/
 venv/
 .vscode/
-
 reports/
