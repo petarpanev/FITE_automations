@@ -6,6 +6,49 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    environment: development
+
+    env:
+      BASE_URL: ${{ secrets.BASE_URL }}
+      VIDEO_URL: "https://ims-gw-dev-cf.trillertv.com/watch/atp-tennistv-classics-free-channel/2phhm/"
+
+      MONITOR_MINUTES: "15"
+      MIN_HEIGHT: "240"
+      MAX_BUFFER_RATIO: "0.05"
+      SIMULATE_OUTAGE: "false"
+      HEADLESS: "False"
+
+      # Login flow user credentials
+      TEST_USER: ${{ secrets.TEST_USER }}
+      TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+
+      # Sign up flow user credentials
+      NEW_TEST_NAME: ${{ secrets.NEW_TEST_NAME }}
+      NEW_TEST_EMAIL: ${{ secrets.NEW_TEST_EMAIL }}
+      NEW_TEST_PASSWORD: ${{ secrets.NEW_TEST_PASSWORD }}
+
+      # PPV and subscription stripe test card details - only in development environment with stripe sandbox products
+      STRIPE_TEST_CARD: ${{ secrets.STRIPE_TEST_CARD }}
+      STRIPE_EXP_DATE: ${{ secrets.STRIPE_EXP_DATE }}
+      STRIPE_CVC: ${{ secrets.STRIPE_CVC }}
+      STRIPE_NAME: ${{ secrets.STRIPE_NAME }}
+      STRIPE_COUNTRY: ${{ secrets.STRIPE_COUNTRY }}
+      STRIPE_ADDRESS: ${{ secrets.STRIPE_ADDRESS }}
+      STRIPE_POSTAL_CODE: ${{ secrets.STRIPE_POSTAL_CODE }}
+      STRIPE_CITY: ${{ secrets.STRIPE_CITY }}
+
+      # Brand texts verification strings
+      BRAND_TERMS: "TrillerTV,Triller Group Inc"
+      NEW_BRAND_TERMS: "FITE,Flipps Media Inc."
+
+      # Expected content carousels by pages (Trending) "Featured,Top Replays,AEW PPV Archive Packs,Pay Per Views,Free Events,Football,Subscriptions,Channels,Interests,News,Profiles,How to Watch"
+      DISCOVER_CAROUSELS: "Featured,Top Replays,BKFC,GLORY Kickboxing,AEW PPV Archive Packs,Pay Per Views,Free Events,Football,Subscriptions,Channels,Interests,News,Profiles,How to Watch"
+      DISCOVER_CAROUSELS_SUBSCRIBER: "Featured,My FITE+,Top Replays,AEW PPV Archive Packs,AEW PPVs,AEW Plus,Pay Per Views,Free Events,Football,Tennis,Motorsports,BKFC,GLORY Kickboxing,Subscriptions,Channels,Interests,News,Profiles,How to Watch"
+      FITE_SUBS_CAROUSELS: "Featured,Subscripton Details,FITE+ Top Replays,Channels,Summer Supercard Week,Recently Added,FITE+ Pro Wrestling Events,FITE+ Boxing Events,FITE+ Boxing Videos,FITE+ MMA Events,GCW: Josh Barnett's Bloodsport,FITE+ Motorsports Events,FITE+ Cricket Events,FITE+ Football Events,Football Highlights,FITE+ Skateboarding Events,Skateboarding Videos,FITE+ Cycling Events,FITE+ Athletics Events,FITE+ Water Sports Events,FITE+ Basketball Events,FITE+ American Football Events,GLORY Kickboxing on FITE+,ONE on FITE+,TNA on FITE+,NJPW on FITE+,WWE ID Wrestlers,Jon Moxley on GCW,David Mundell - BKFC’s P4P King,Mike Perry's Greatest Hits,Subscription Benefits"
+      FITE_SUBS_CAROUSELS_SUBSCRIBER: "Featured,FITE+ Top Replays,Channels,Summer Supercard Week,Recently Added,FITE+ Pro Wrestling Events,FITE+ Boxing Events,FITE+ Boxing Videos,FITE+ MMA Events,GCW: Josh Barnett's Bloodsport,FITE+ Motorsports Events,FITE+ Cricket Events,FITE+ Football Events,Football Highlights,FITE+ Skateboarding Events,Skateboarding Videos,FITE+ Cycling Events,FITE+ Athletics Events,FITE+ Water Sports Events,FITE+ Basketball Events,FITE+ American Football Events,GLORY Kickboxing on FITE+,ONE on FITE+,TNA on FITE+,NJPW on FITE+,WWE ID Wrestlers,Jon Moxley on GCW,David Mundell - BKFC’s P4P King,Mike Perry's Greatest Hits,Subscription Benefits"
+
+
     steps:
     - uses: actions/checkout@v4
     
