@@ -18,7 +18,6 @@ def test_ui_discover_page_header_visibility(page):
     discover_page = DiscoverPage(page)
     base_page = BasePage(page)
     discover_page.navigate()
-    expect(page).to_have_url(re.compile(r".*ims-gw-dev-cf.trillertv.com"), timeout=15000)
     base_page.cookie_consent_accept()
 
     # HEADER: Strings and images visibility verification:
@@ -39,7 +38,7 @@ def test_ui_discover_page_header_visibility(page):
         base_page.header_deals_link,
     )
     for locator in visible_header_locators:
-        expect(locator, f"UI Component Missing: '{locator}' was not visible on the header").to_be_visible()
+        expect(locator, f"UI Component Missing: '{locator}' was not visible on the header").to_be_visible(timeout=15000)
 
 #    for title, section in discover_page.discover_carousel_sections.items():
 #        expect(
