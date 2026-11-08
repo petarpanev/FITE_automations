@@ -6,13 +6,22 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  workflow_dispatch:  
+  workflow_dispatch:
+    inputs:
+      target_env:
+        description: 'Изберете тестова среда:'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+        - development
+        - production  
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
-    environment: development
+    environment: ${{ github.event.inputs.target_env || 'development' }}
 
     env:
       BASE_URL: ${{ secrets.BASE_URL }}
