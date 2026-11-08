@@ -27,11 +27,11 @@ class DiscoverPage(BasePage):
         self.featured_previous_control = self.featured_section.locator(".swipe-prev")
         self.featured_next_control = self.featured_section.locator(".swipe-next")
 
-        self.featured_item_1_publisher = page.locator("body > main > section.mb-10.overflow-hidden.featured.px-0.relative.swiper-container.md\:mt-0.-mt-12.swiper-initialized.swiper-horizontal.swiper-android.swiper-backface-hidden > ul > li:nth-child(6) > div > div > p")
-        self.featured_item_1_title = page.locator("body > main > section.mb-10.overflow-hidden.featured.px-0.relative.swiper-container.md\:mt-0.-mt-12.swiper-initialized.swiper-horizontal.swiper-android.swiper-backface-hidden > ul > li:nth-child(5) > div > div > h2")
-        self.featured_item_1_air_time = page.locator("body > main > section.mb-10.overflow-hidden.featured.px-0.relative.swiper-container.md\:mt-0.-mt-12.swiper-initialized.swiper-horizontal.swiper-android.swiper-backface-hidden > ul > li.swiper-slide.w-full.swiper-slide-prev > div > div > div > time")
-        self.featured_item_1_image = page.locator("body > main > section.mb-10.overflow-hidden.featured.px-0.relative.swiper-container.md\:mt-0.-mt-12.swiper-initialized.swiper-horizontal.swiper-android.swiper-backface-hidden > ul > li:nth-child(4) > div > a > picture")
-        self.featured_swiper = page.locator("body > main > section.mb-10.overflow-hidden.featured.px-0.relative.swiper-container.md\:mt-0.-mt-12.swiper-initialized.swiper-horizontal.swiper-android.swiper-backface-hidden > div.swiper-paginations.text-center.absolute.bottom-0.md\:bottom-4.left-0.xl\:left-18.z-10.w-full.xl\:w-\[22\%\].swiper-pagination-clickable.fite-swiper-bullets.fite-swiper-pagination")        
+        self.featured_item_1_publisher = page.locator(r"body > main > section.mb-10.overflow-hidden.featured.px-0.relative.swiper-container.md\:mt-0.-mt-12.swiper-initialized.swiper-horizontal.swiper-android.swiper-backface-hidden > ul > li:nth-child(6) > div > div > p")
+        self.featured_item_1_title = page.locator(r"body > main > section.mb-10.overflow-hidden.featured.px-0.relative.swiper-container.md\:mt-0.-mt-12.swiper-initialized.swiper-horizontal.swiper-android.swiper-backface-hidden > ul > li:nth-child(5) > div > div > h2")
+        self.featured_item_1_air_time = page.locator(r"body > main > section.mb-10.overflow-hidden.featured.px-0.relative.swiper-container.md\:mt-0.-mt-12.swiper-initialized.swiper-horizontal.swiper-android.swiper-backface-hidden > ul > li.swiper-slide.w-full.swiper-slide-prev > div > div > div > time")
+        self.featured_item_1_image = page.locator(r"body > main > section.mb-10.overflow-hidden.featured.px-0.relative.swiper-container.md\:mt-0.-mt-12.swiper-initialized.swiper-horizontal.swiper-android.swiper-backface-hidden > ul > li:nth-child(4) > div > a > picture")
+        self.featured_swiper = page.locator(r"body > main > section.mb-10.overflow-hidden.featured.px-0.relative.swiper-container.md\:mt-0.-mt-12.swiper-initialized.swiper-horizontal.swiper-android.swiper-backface-hidden > div.swiper-paginations.text-center.absolute.bottom-0.md\:bottom-4.left-0.xl\:left-18.z-10.w-full.xl\:w-\[22\%\].swiper-pagination-clickable.fite-swiper-bullets.fite-swiper-pagination")        
 
         self.top_live_upcoming_section = self._section("Top Live & Upcoming")
         self.trending_section = self._section("Trending")
@@ -60,7 +60,7 @@ class DiscoverPage(BasePage):
         self.news_section = page.locator("#news > header > h2 > a")
         self.big_screen_tv_section_title = self._section("Stream all the action to your big-screen TV!")
         self.big_screen_tv_section_text = page.get_by_text("Learn how to live stream to any connected smart TV, Roku, Apple TV, Chromecast, or Xbox device.")
-        self.big_screen_tv_section_button = page.locator("body > main > section.mb-10.py-20.px-4.xl\:px-18.flex.flex-col.lg\:flex-row.text-center.items-center.bg-mono-white.text-fite-gray-100.font-sans > div.w-full.lg\:w-1\/2.pr-3 > a")
+        self.big_screen_tv_section_button = page.locator(r"body > main > section.mb-10.py-20.px-4.xl\:px-18.flex.flex-col.lg\:flex-row.text-center.items-center.bg-mono-white.text-fite-gray-100.font-sans > div.w-full.lg\:w-1\/2.pr-3 > a")
         self.discover_section = self._section("Discover {brand}")
 
         self.content_sections = self.main.locator("section")
