@@ -48,7 +48,6 @@ jobs:
       FITE_SUBS_CAROUSELS: "Featured,Subscripton Details,FITE+ Top Replays,Channels,Summer Supercard Week,Recently Added,FITE+ Pro Wrestling Events,FITE+ Boxing Events,FITE+ Boxing Videos,FITE+ MMA Events,GCW: Josh Barnett's Bloodsport,FITE+ Motorsports Events,FITE+ Cricket Events,FITE+ Football Events,Football Highlights,FITE+ Skateboarding Events,Skateboarding Videos,FITE+ Cycling Events,FITE+ Athletics Events,FITE+ Water Sports Events,FITE+ Basketball Events,FITE+ American Football Events,GLORY Kickboxing on FITE+,ONE on FITE+,TNA on FITE+,NJPW on FITE+,WWE ID Wrestlers,Jon Moxley on GCW,David Mundell - BKFC’s P4P King,Mike Perry's Greatest Hits,Subscription Benefits"
       FITE_SUBS_CAROUSELS_SUBSCRIBER: "Featured,FITE+ Top Replays,Channels,Summer Supercard Week,Recently Added,FITE+ Pro Wrestling Events,FITE+ Boxing Events,FITE+ Boxing Videos,FITE+ MMA Events,GCW: Josh Barnett's Bloodsport,FITE+ Motorsports Events,FITE+ Cricket Events,FITE+ Football Events,Football Highlights,FITE+ Skateboarding Events,Skateboarding Videos,FITE+ Cycling Events,FITE+ Athletics Events,FITE+ Water Sports Events,FITE+ Basketball Events,FITE+ American Football Events,GLORY Kickboxing on FITE+,ONE on FITE+,TNA on FITE+,NJPW on FITE+,WWE ID Wrestlers,Jon Moxley on GCW,David Mundell - BKFC’s P4P King,Mike Perry's Greatest Hits,Subscription Benefits"
 
-
     steps:
     - uses: actions/checkout@v4
     
@@ -64,6 +63,11 @@ jobs:
         
     - name: Install Playwright Browsers
       run: playwright install --with-deps
+
+    - name: Restore Auth Cookies File
+      run: |
+        mkdir -p .auth
+        echo "${{ secrets.AUTH_COOKIES_BASE64 }}" | base64 --decode > .auth/cookies.json
       
     - name: Run Pytest
       run: pytest -o pythonpath=src tests/web/
