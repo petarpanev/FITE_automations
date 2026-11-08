@@ -124,7 +124,7 @@ class BasePage:
         return failures
 
     def cookie_consent_accept(self):
-        cookie_button = self.get_by_role("button", name="Accept All")
+        cookie_button = self.page.get_by_role("button", name="Accept All")
         try:
             cookie_button.wait_for(state="visible", timeout=3000)
             if cookie_button.is_visible():

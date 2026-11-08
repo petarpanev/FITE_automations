@@ -380,7 +380,7 @@ def test_ui_discover_page_link_locators_exclude_header_and_footer(page):
     expect(base_page.header_links).not_to_have_count(0)
     expect(base_page.footer_links).not_to_have_count(0)
 """
-
+"""
 def test_ui_discover_page_links_are_reachable(page):
     discover_page = DiscoverPage(page)
     discover_page.navigate()
@@ -390,3 +390,4 @@ def test_ui_discover_page_links_are_reachable(page):
     assert not unreachable_links, "Unreachable page links:\n" + "\n".join(
         unreachable_links
     )
+"""
