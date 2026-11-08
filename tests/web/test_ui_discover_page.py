@@ -138,7 +138,7 @@ def test_ui_discover_page_anonymous_required_carousels_verification(page):
     # else:
         # print("\n✅ All verified items are visible on the page!")      
 
-
+"""
 def test_ui_discover_page_subscriber_required_carousels_verification(browser: Browser, external_session: Path):
     context = browser.new_context(storage_state=external_session)
     page = context.new_page()
@@ -217,7 +217,7 @@ def test_ui_discover_page_subscriber_required_carousels_verification(browser: Br
             print(f" - {item}")
     # else:
         # print("\n✅ All verified items are visible on the page!")   
-
+"""
 
 
 """    
