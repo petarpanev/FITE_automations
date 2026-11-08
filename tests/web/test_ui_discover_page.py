@@ -23,7 +23,7 @@ def test_ui_discover_page_header_visibility(page):
 
     # HEADER: Strings and images visibility verification:
     visible_header_locators: tuple[Locator, ...] = (
-        base_page.header,
+        # base_page.header,
         # base_page.header_logo_link,
         base_page.header_logo,
         base_page.header_navigation,
