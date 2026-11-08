@@ -1,0 +1,8 @@
+gevent
+locust
+playwright
+pydantic_settings
+pytest
+pytest-xdist
+python-dotenv
+
