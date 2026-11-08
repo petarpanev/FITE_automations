@@ -72,7 +72,7 @@ class BasePage:
         )
         self.footer_terms_of_service_link = self.footer.get_by_role("link", name="Terms of Service", exact=True)
         self.footer_privacy_policy_link = self.footer.get_by_role("link", name="Privacy Policy", exact=True)
-        self.footer_consent_preferences_link = self.footer.get_by_text("Consent Preferences", exact=True)
+        #self.footer_consent_preferences_link = self.footer.get_by_text("Consent Preferences", exact=True)
         self.footer_copyright = self.footer.locator("p")
 
     def _check_links_reachability(

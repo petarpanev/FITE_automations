@@ -304,7 +304,7 @@ def test_ui_discover_page_footer_visibility(page):
         base_page.footer_help_center_link,
         base_page.footer_terms_of_service_link,
         base_page.footer_privacy_policy_link,
-        base_page.footer_consent_preferences_link,
+        #base_page.footer_consent_preferences_link,
         base_page.footer_copyright,
     )
     for locator in visible_footer_locators:

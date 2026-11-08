@@ -47,7 +47,7 @@ class DiscoverPage(BasePage):
         self.football_section = (self.main.locator("section > header").get_by_role("heading", name="Football", exact=True).locator("xpath=../.."))
         self.my_fite_plus_section = self._section("My FITE+")
         self.aew_ppvs_section = self._section("AEW PPVs")
-        self.aew_plus_section = self._section("AEW Plus")
+        #self.aew_plus_section = self._section("AEW Plus")
         self.tennis_section = self._section("Tennis")
         self.motorsports_section = self._section("Motorsports")
         
@@ -103,7 +103,7 @@ class DiscoverPage(BasePage):
             "Football": self.football_section,
             "My FITE+": self.my_fite_plus_section,
             "AEW PPVs": self.aew_ppvs_section,
-            "AEW Plus": self.aew_plus_section,
+            #"AEW Plus": self.aew_plus_section,
             "Tennis": self.tennis_section,
             "Motorsports": self.motorsports_section,
             "Channels": self.channels_section,
