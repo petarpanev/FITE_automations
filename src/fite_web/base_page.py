@@ -124,7 +124,15 @@ class BasePage:
         return failures
 
     def cookie_consent_accept(self):
-        self.page.get_by_role("button", name="Accept All").click()
+        cookie_button = self.get_by_role("button", name="Accept All")
+        try:
+            cookie_button.wait_for(state="visible", timeout=3000)
+            if cookie_button.is_visible():
+                cookie_button.click()
+        except Exception:
+        # Влиза тук, ако wait_for хвърли TimeoutError (т.е. в GitHub Actions)
+            print("Banner is not shown for 3 seconds. Cookies banner is not enabled in US territories. (GitHub Actions)")
+        #self.page.get_by_role("button", name="Accept All").click()
 
 
     def navigate_to_discover(self):
