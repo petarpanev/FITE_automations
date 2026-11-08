@@ -66,4 +66,4 @@ jobs:
       run: playwright install --with-deps
       
     - name: Run Pytest
-      run: pytest tests/web
+      run: pytest -o pythonpath=. tests/web/
