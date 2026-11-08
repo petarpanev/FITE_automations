@@ -1,3 +1,4 @@
+import re
 from datetime import datetime
 from pathlib import Path
 #from unittest.mock import MagicMock
@@ -17,6 +18,7 @@ def test_ui_discover_page_header_visibility(page):
     discover_page = DiscoverPage(page)
     base_page = BasePage(page)
     discover_page.navigate()
+    expect(page).to_have_url(re.compile(r".*ims-gw-dev-cf.trillertv.com"), timeout=15000)
     base_page.cookie_consent_accept()
 
     # HEADER: Strings and images visibility verification:
