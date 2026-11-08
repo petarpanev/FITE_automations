@@ -1,8 +1,8 @@
 gevent
 locust
-playwright
 pydantic_settings
 pytest
 pytest-xdist
 python-dotenv
 pytest-check
+pytest-playwright
