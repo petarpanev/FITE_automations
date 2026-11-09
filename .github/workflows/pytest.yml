@@ -11,7 +11,7 @@ on:
       target_env:
         description: 'Изберете тестова среда:'
         required: true
-        default: 'development'
+        default: 'production'
         type: choice
         options:
         - development
@@ -21,7 +21,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    environment: ${{ github.event.inputs.target_env || 'development' }}
+    environment: ${{ github.event.inputs.target_env || 'production' }}
 
     env:
       BASE_URL: ${{ secrets.BASE_URL }}

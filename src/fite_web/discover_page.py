@@ -73,7 +73,7 @@ class DiscoverPage(BasePage):
         self.interest_links = self.browse_by_interest_section_title.get_by_role("link")
         self.news_articles = self.news_section.locator("article, li")
 
-        self.fite_subs_logo = self.main.locator("#subscriptions img[alt='FITE+'][src*='fite_plus_dark_bgr']")
+        self.fite_subs_logo = self.main.locator("#subscriptions img[alt='TrillerTV+'][src*='trillertv_plus_dark_background_Guni4gF']")
         self.how_to_watch_section = self.main.locator("section").filter(has=self.page.get_by_role("heading", name="Stream all the action to your big-screen TV!", exact=True,))
         self.how_to_watch_image = self.how_to_watch_section.locator("img")
         self.featured_item_1 = self.featured_section.locator("li").first

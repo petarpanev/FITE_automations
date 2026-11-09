@@ -340,7 +340,7 @@ def test_ui_discover_page_brand_strings_verification(page):
     expect(base_page.footer_news_link).to_have_text(f"{brand} News")
     expect(base_page.footer_copyright.first).to_have_text(f"Copyright © 2016-{datetime.now().year}, Flipps Media Inc.")
 
-"""
+
 def test_ui_discover_page_brand_images_verification(page):
     discover_page = DiscoverPage(page)
     base_page = BasePage(page)
@@ -357,7 +357,7 @@ def test_ui_discover_page_brand_images_verification(page):
 #            baseline_path=(PROJECT_ROOT / "resources" / "baselines" / "brand_FITE" / "logo.svg"),
         ),
         BrandVisualAsset(
-            name="FITE+ subscription logo",
+            name="TrillerTV+ subscription logo",
             selector=discover_page.fite_subs_logo,
             baseline_path=(PROJECT_ROOT / "resources" / "baselines" / "brand_TrillerTV" / "trillertv_plus_dark_background_Guni4gF.png"),
 #            baseline_path=(PROJECT_ROOT / "resources" / "baselines" / "brand_FITE" / "fiteplus_logo_subs.svg"),
@@ -373,7 +373,7 @@ def test_ui_discover_page_brand_images_verification(page):
     for asset in image_assets:
         result = image_strategy.compare(page, asset)
         assert result.status == "passed", f"{result.name}: {result.detail}"
-"""
+
 """
 def test_ui_discover_page_link_locators_exclude_header_and_footer(page):
     discover_page = DiscoverPage(page)
