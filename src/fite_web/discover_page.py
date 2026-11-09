@@ -11,7 +11,7 @@ class DiscoverPage(BasePage):
         self.url = settings.BASE_URL
 
         self.fite_subs_logo = page.locator(
-            "#subscriptions img[alt='FITE+'][src*='fite_plus_dark_bgr']"
+            "#subscriptions img[alt='TrillerTV+'][src*='trillertv_plus_dark_background_Guni4gF']"
         )
         self.how_to_watch_image = page.locator(
             r"body > main > section.mb-10.py-20.px-4.xl\:px-18."
@@ -90,6 +90,7 @@ class DiscoverPage(BasePage):
         # All available carousels catalog which can be added to Discover page
         self.all_locators = {
             "Featured": self.featured_section,
+            "Top Live & Upcoming": self.top_live_upcoming_section,
             "Top Replays": self.top_replays_section,
             "AEW PPV Archive Packs": self.aew_packs_section,
             "Pay Per Views": self.pay_per_views_section,
@@ -112,7 +113,7 @@ class DiscoverPage(BasePage):
             "Interests": self.browse_by_interest_section_text,
             "News": self.news_section,
             "How to Watch": self.big_screen_tv_section_title,
-            "Discover FITE": self.discover_section,
+            "Discover TrillerTV": self.discover_section,
        }
     """
     @property

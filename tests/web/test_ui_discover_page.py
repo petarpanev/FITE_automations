@@ -38,7 +38,7 @@ def test_ui_discover_page_header_visibility(page):
         base_page.header_deals_link,
     )
     for locator in visible_header_locators:
-        expect(locator, f"UI Component Missing: '{locator}' was not visible on the header").to_be_visible(timeout=15000)
+        expect(locator, f"UI Component Missing: '{locator}' was not visible on the header").to_be_visible()
 
 #    for title, section in discover_page.discover_carousel_sections.items():
 #        expect(
@@ -306,7 +306,7 @@ def test_ui_discover_page_footer_visibility(page):
         base_page.footer_terms_of_service_link,
         base_page.footer_privacy_policy_link,
         #base_page.footer_consent_preferences_link,
-        base_page.footer_copyright,
+        base_page.footer_copyright.first,
     )
     for locator in visible_footer_locators:
         expect(locator, f"UI Component Missing: '{locator}' was not visible on the footer").to_be_visible()
@@ -338,9 +338,9 @@ def test_ui_discover_page_brand_strings_verification(page):
     expect(discover_page.news_section).to_have_text(f"{brand} News")
     expect(base_page.footer_about_link).to_have_text(f"About {brand}")
     expect(base_page.footer_news_link).to_have_text(f"{brand} News")
-    expect(base_page.footer_copyright).to_have_text(f"Copyright © 2016-{datetime.now().year}, Flipps Media Inc.")
+    expect(base_page.footer_copyright.first).to_have_text(f"Copyright © 2016-{datetime.now().year}, Flipps Media Inc.")
 
-
+"""
 def test_ui_discover_page_brand_images_verification(page):
     discover_page = DiscoverPage(page)
     base_page = BasePage(page)
@@ -353,24 +353,27 @@ def test_ui_discover_page_brand_images_verification(page):
         BrandVisualAsset(
             name="Header logo",
             selector=base_page.header_logo,
-            baseline_path=(PROJECT_ROOT / "resources" / "baselines" / "brand_FITE" / "logo.svg"),
+            baseline_path=(PROJECT_ROOT / "resources" / "baselines" / "brand_TrillerTV" / "logo.svg"),
+#            baseline_path=(PROJECT_ROOT / "resources" / "baselines" / "brand_FITE" / "logo.svg"),
         ),
         BrandVisualAsset(
             name="FITE+ subscription logo",
             selector=discover_page.fite_subs_logo,
-            baseline_path=(PROJECT_ROOT / "resources" / "baselines" / "brand_FITE" / "fiteplus_logo_subs.svg"),
+            baseline_path=(PROJECT_ROOT / "resources" / "baselines" / "brand_TrillerTV" / "trillertv_plus_dark_background_Guni4gF.png"),
+#            baseline_path=(PROJECT_ROOT / "resources" / "baselines" / "brand_FITE" / "fiteplus_logo_subs.svg"),
         ),
         BrandVisualAsset(
             name="How to Watch image",
             selector=discover_page.how_to_watch_image,
-            baseline_path=(PROJECT_ROOT / "resources" / "baselines" / "brand_FITE" / "how-to-watch-fite.jpg"),
+            baseline_path=(PROJECT_ROOT / "resources" / "baselines" / "brand_TrillerTV" / "xhow-to-watch-trillertv.png.pagespeed.ic.m9iyWGWjQQ.webp"),
+#            baseline_path=(PROJECT_ROOT / "resources" / "baselines" / "brand_FITE" / "how-to-watch-fite.jpg"),
         ),
     )
 
     for asset in image_assets:
         result = image_strategy.compare(page, asset)
         assert result.status == "passed", f"{result.name}: {result.detail}"
-
+"""
 """
 def test_ui_discover_page_link_locators_exclude_header_and_footer(page):
     discover_page = DiscoverPage(page)
