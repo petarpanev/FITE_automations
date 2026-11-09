@@ -77,7 +77,10 @@ def browser_type_launch_args(
 
 @pytest.fixture
 def browser_context_args(browser_context_args: dict[str, Any]) -> dict[str, Any]:
-    return {**browser_context_args, "viewport": {"width": 1280, "height": 720}} 
+    return {
+        **browser_context_args,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; Pixel 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Mobile Safari/537.36", 
+        "viewport": {"width": 1280, "height": 720}} 
 
 
 @pytest.fixture(scope="session")

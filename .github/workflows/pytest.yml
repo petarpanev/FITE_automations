@@ -63,7 +63,8 @@ jobs:
       FITE_SUBS_CAROUSELS_SUBSCRIBER: "Featured,FITE+ Top Replays,Channels,Summer Supercard Week,Recently Added,FITE+ Pro Wrestling Events,FITE+ Boxing Events,FITE+ Boxing Videos,FITE+ MMA Events,GCW: Josh Barnett's Bloodsport,FITE+ Motorsports Events,FITE+ Cricket Events,FITE+ Football Events,Football Highlights,FITE+ Skateboarding Events,Skateboarding Videos,FITE+ Cycling Events,FITE+ Athletics Events,FITE+ Water Sports Events,FITE+ Basketball Events,FITE+ American Football Events,GLORY Kickboxing on FITE+,ONE on FITE+,TNA on FITE+,NJPW on FITE+,WWE ID Wrestlers,Jon Moxley on GCW,David Mundell - BKFC’s P4P King,Mike Perry's Greatest Hits,Subscription Benefits"
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code  
+      uses: actions/checkout@v4
     
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -79,11 +80,11 @@ jobs:
       run: playwright install --with-deps
       
     - name: Run Pytest
-      run: pytest -o pythonpath=src tests/web/
+      run: pytest -o pythonpath=src tests/web/ --browser chromium --headless --screenshot=only-on-failure
 
     - name: Upload Playwright Trace
       uses: actions/upload-artifact@v4
-      if: always()
+      if: failure()
       with:
         name: playwright-traces
         path: test-results/  
