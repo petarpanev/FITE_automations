@@ -53,8 +53,8 @@ jobs:
       STRIPE_CITY: ${{ secrets.STRIPE_CITY }}
 
       # Brand texts verification strings
-      BRAND_TERMS: "TrillerTV,Triller Group Inc"
-      NEW_BRAND_TERMS: "FITE,Flipps Media Inc."
+      BRAND_TERMS: "FITE,Flipps Media Inc."
+      NEW_BRAND_TERMS: "TrillerTV,Triller Group Inc"
 
       # Expected content carousels by pages (Trending) "Featured,Top Replays,AEW PPV Archive Packs,Pay Per Views,Free Events,Football,Subscriptions,Channels,Interests,News,Profiles,How to Watch"
       DISCOVER_CAROUSELS: "Featured,Top Live & Upcoming,Trending,Top Replays,Pay Per Views,Free Events,Recently Added,Games of The Future,GCW Events,GLORY Kickboxing,Football,Subscriptions,Channels,Interests,News,Profiles,How to Watch,Discover TrillerTV"
