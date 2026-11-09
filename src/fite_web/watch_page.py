@@ -52,7 +52,7 @@ class WatchPage(BasePage):
             "button", name="Sign up to Watch", exact=True
         )
         self.buy_button = self.player_section.get_by_role(
-            "button", name="Buy $9.99", exact=True
+            "button", name="Buy $"
         )
         self.rating_buttons = self.player_section.get_by_role(
             "button", name="Rate"
